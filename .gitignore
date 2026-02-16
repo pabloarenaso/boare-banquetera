@@ -1,0 +1,10 @@
+.tmp/
+.env
+__pycache__/
+*.pyc
+token.json
+credentials.json
+node_modules/
+dist/
+build/
+.DS_Store
