@@ -2,6 +2,7 @@
 
 > [!NOTE]
 > This file contains project-specific instructions. Global operating logic is defined in [GEMINI.md](file:///C:/Users/pablo/.gemini/antigravity/GEMINI.md).
+> Repository: [Boare-Banquetera](https://github.com/pabloarenaso/boare-banquetera)
 
 You operate within a 3-layer architecture tailored for this event catering project.
 
