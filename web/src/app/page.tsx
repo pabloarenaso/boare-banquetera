@@ -1,13 +1,22 @@
-import { Hero } from "@/components/landing/hero";
-import { ServicesGrid } from "@/components/landing/services-grid";
-import { Footer } from "@/components/landing/footer";
+
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Hero } from "@/components/home/hero";
+import { Concept } from "@/components/home/concept";
+import { Services } from "@/components/home/services";
+import { Gallery } from "@/components/home/gallery";
+import { Cta } from "@/components/home/cta";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-50">
+    <div className="antialiased text-stone-800 bg-white">
+      <Navbar />
       <Hero />
-      <ServicesGrid />
+      <Concept />
+      <Services />
+      <Gallery />
+      <Cta />
       <Footer />
-    </main>
+    </div>
   );
 }
