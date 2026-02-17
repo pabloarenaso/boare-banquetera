@@ -1,8 +1,9 @@
-'use client'
 
 import { useFormState } from 'react-dom'
 import { login } from '../actions'
 import { useActionState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 const initialState = {
     message: '',
@@ -14,6 +15,10 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-stone-50">
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border border-stone-200">
+                <Link href="/" className="inline-flex items-center text-sm text-stone-500 hover:text-stone-800 mb-6 transition-colors">
+                    <ArrowLeft className="w-4 h-4 mr-1" />
+                    Volver al inicio
+                </Link>
                 <h1 className="text-2xl font-serif font-bold text-center text-stone-800 mb-6">Administración Boaré</h1>
 
                 <form action={formAction} className="space-y-4">

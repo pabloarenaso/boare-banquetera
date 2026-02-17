@@ -83,7 +83,8 @@ export function StepMenu({ onNext, onPrev }: Props) {
                   {categoryProducts.map((product) => {
                     const quantity = getProductQuantity(product.id);
                     const isSelected = quantity > 0;
-                    const isFixedQuantity = product.unit_type === 'persona'; // Fixed by guest count
+                    // Fixed only if it's per person AND NOT a service (services like Open Bar can have custom qty)
+                    const isFixedQuantity = product.unit_type === 'persona' && product.category !== 'servicio';
 
                     return (
                       <div
@@ -121,9 +122,13 @@ export function StepMenu({ onNext, onPrev }: Props) {
                               >
                                 <Minus className="w-4 h-4" />
                               </button>
-                              <span className={`font-mono font-bold w-6 text-center ${quantity > 0 ? 'text-amber-600' : 'text-stone-300'}`}>
-                                {quantity}
-                              </span>
+                              <input
+                                type="number"
+                                min="0"
+                                value={quantity}
+                                onChange={(e) => updateProductQuantity(product, parseInt(e.target.value) || 0)}
+                                className={`font-mono font-bold w-12 text-center bg-transparent border-none focus:ring-0 p-0 ${quantity > 0 ? 'text-amber-600' : 'text-stone-300'}`}
+                              />
                               <button
                                 onClick={() => updateProductQuantity(product, quantity + 1)}
                                 className="w-7 h-7 flex items-center justify-center rounded-full text-stone-500 hover:bg-stone-100"
