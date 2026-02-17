@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, MapPin, Lock } from "lucide-react";
 
 export function Footer() {
     return (
@@ -59,7 +59,13 @@ export function Footer() {
             </div>
 
             <div className="container mx-auto px-6 mt-16 pt-8 border-t border-stone-800 text-center text-xs">
-                <p>&copy; {new Date().getFullYear()} Boaré Banquetería. Todos los derechos reservados.</p>
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p>&copy; {new Date().getFullYear()} Boaré Banquetería. Todos los derechos reservados.</p>
+                    <Link href="/admin/login" className="flex items-center gap-1 text-stone-600 hover:text-amber-600 transition-colors">
+                        <Lock className="w-3 h-3" />
+                        <span>Acceso Administrativo</span>
+                    </Link>
+                </div>
             </div>
         </footer>
     );
