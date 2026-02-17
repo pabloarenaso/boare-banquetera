@@ -4,7 +4,6 @@ import Link from "next/link";
 export function Cta() {
     return (
         <section className="py-24 bg-amber-50 relative overflow-hidden">
-            {"/* Background Pattern or Image could go here */"}
             <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5" />
 
             <div className="container mx-auto px-6 relative z-10 text-center space-y-8">
